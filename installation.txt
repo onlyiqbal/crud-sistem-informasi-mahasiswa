@@ -1,4 +1,4 @@
-Cara menjalankan aplikasi sistem informasi mahasiswa
+Cara menjalankan aplikasi sistem informasi mahasiswa :
 
 1. Buat dua buah database di local database yaitu "db_student" dan "db_student_test".Database "db_student" merupakan database utama dari aplikasinya sedangkan database "db_student_test" adalah database untuk unit test.
 
@@ -7,3 +7,10 @@ Cara menjalankan aplikasi sistem informasi mahasiswa
 3. Setelah dua langkah diatas selesai.Buka file projetcnya menggunakan vscode(atau kode editor lain) kemundian buka terminal bawaan vscode masuk ke direktori public.
 
 4. Setelah masuk ke direktori public ketik "php -S localhost:8080" untuk mengaktifkan php development server.Ketik di url web browser "localhost:8080".Maka aplikasi sudah bisa digunakan.
+
+Cara menjalankan unit test :
+
+1. Pastikan sudah menginstall composer php.
+2. Buka folder projectnya menggunkan text editor, lalu buka terminal bawaanya.
+3. Ketik diterminal "composer install" maka seluruh dependency akan terinstall.
+4. Setelah terinstall ketik diterminal "vendor/bin/phpunit tests" maka seluruh unit test akan berjalan.
