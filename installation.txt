@@ -1,0 +1,9 @@
+Cara menjalankan aplikasi sistem informasi mahasiswa
+
+1. Buat dua buah database di local database yaitu "db_student" dan "db_student_test".Database "db_student" merupakan database utama dari aplikasinya sedangkan database "db_student_test" adalah database untuk unit test.
+
+2. Import file sql script sesuai dengan nama file dengan databasenya,disarankan menggunakan phpMyAdmin.File "db_student.sql" untuk database "db_student" dan file "db_student_test.sql" untuk database "db_student_test".
+
+3. Setelah dua langkah diatas selesai.Buka file projetcnya menggunakan vscode(atau kode editor lain) kemundian buka terminal bawaan vscode masuk ke direktori public.
+
+4. Setelah masuk ke direktori public ketik "php -S localhost:8080" untuk mengaktifkan php development server.Ketik di url web browser "localhost:8080".Maka aplikasi sudah bisa digunakan.
