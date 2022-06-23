@@ -3,7 +3,6 @@
 namespace Iqbal\Sistem\Informasi\Mahasiswa\Repository;
 
 use Iqbal\Sistem\Informasi\Mahasiswa\Domain\Student;
-use Iqbal\Sistem\Informasi\Mahasiswa\Model\StudentAddRequest;
 use PDO;
 
 class StudentRepository
