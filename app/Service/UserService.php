@@ -19,13 +19,13 @@ class UserService
           $this->userRepository = $userRepository;
      }
 
-     public function registration(UserRegistrationRequest $request): UserRegistrationResponse
+     public function register(UserRegistrationRequest $request): UserRegistrationResponse
      {
-          $this->validateUserRegistrationRequest($request);
+          $this->validateUserRegisterRequest($request);
 
           $user = $this->userRepository->findById($request->id);
           if ($user != null) {
-               throw new ValidationException("Admin yang didaftarkan sudah ada");
+               throw new ValidationException("User yang didaftarkan sudah ada");
           }
 
           $user = new User();
@@ -39,9 +39,9 @@ class UserService
           return $response;
      }
 
-     private function validateUserRegistrationRequest(UserRegistrationRequest $request)
+     private function validateUserRegisterRequest(UserRegistrationRequest $request)
      {
-          if ($request->id == null || $request->username == null || $request->password == null) {
+          if (($request->id == null || "") && ($request->username == null || "") && ($request->password == null || "")) {
                throw new ValidationException("Id, Username, Password tidak boleh kosong");
           }
      }
@@ -66,7 +66,7 @@ class UserService
 
      private function validateUserLoginRequest(UserLoginRequest $request)
      {
-          if ($request->username == null || trim($request->password) == null) {
+          if (($request->username == null || "") && ($request->password == null || "")) {
                throw new ValidationException("Username atau password tidak boleh kosong");
           }
      }

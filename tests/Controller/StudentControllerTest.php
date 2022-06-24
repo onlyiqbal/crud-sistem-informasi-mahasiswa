@@ -5,7 +5,6 @@ namespace Iqbal\Sistem\Informasi\Mahasiswa\Controller {
 
      use Iqbal\Sistem\Informasi\Mahasiswa\Config\Database;
      use Iqbal\Sistem\Informasi\Mahasiswa\Domain\Student;
-     use Iqbal\Sistem\Informasi\Mahasiswa\Model\StudentUpdateRequest;
      use Iqbal\Sistem\Informasi\Mahasiswa\Repository\StudentRepository;
      use PHPUnit\Framework\TestCase;
 

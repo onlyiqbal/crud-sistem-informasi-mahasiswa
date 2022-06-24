@@ -33,7 +33,7 @@ namespace Iqbal\Sistem\Informasi\Mahasiswa\Controller {
           {
                $this->userController->register();
 
-               $this->expectOutputRegex("[Register Admin]");
+               $this->expectOutputRegex("[Register]");
           }
 
           public function testPostRegisterSuccess()

@@ -35,7 +35,7 @@ class UserServiceTest extends TestCase
           $request->username = "Budi";
           $request->password = "qwerty";
 
-          $response = $this->userService->registration($request);
+          $response = $this->userService->register($request);
 
           $this->assertEquals($request->id, $response->user->id);
           $this->assertEquals($request->username, $response->user->username);
@@ -52,7 +52,7 @@ class UserServiceTest extends TestCase
           $request->username = '';
           $request->password = '';
 
-          $this->userService->registration($request);
+          $this->userService->register($request);
      }
 
      public function testUserRegistrationDuplicate()
@@ -71,7 +71,7 @@ class UserServiceTest extends TestCase
           $request->username = 'Budi';
           $request->password = 'qwerty';
 
-          $this->userService->registration($request);
+          $this->userService->register($request);
      }
 
      public function testLoginNotFound()

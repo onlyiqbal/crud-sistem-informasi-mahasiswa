@@ -30,7 +30,7 @@ class UserController
      public function register()
      {
           View::renderRegister("User/register", [
-               'title' => "Register Admin"
+               'title' => "Register User"
           ]);
      }
 
@@ -42,7 +42,7 @@ class UserController
           $request->password = $_POST['password'];
 
           try {
-               $this->userService->registration($request);
+               $this->userService->register($request);
                View::redirect('/users/login');
           } catch (ValidationException $exception) {
                View::renderRegister("User/register", [
@@ -68,7 +68,7 @@ class UserController
           try {
                $response = $this->userService->login($request);
                $this->sessionService->create($response->user->id);
-               // ke halaman dasboard
+               // ke halaman dashboard
                View::redirect("/");
           } catch (ValidationException $exception) {
                View::renderIndex('Home/index', [

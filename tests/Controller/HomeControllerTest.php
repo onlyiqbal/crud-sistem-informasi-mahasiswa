@@ -29,8 +29,7 @@ class HomeControllerTest extends TestCase
      public function testGuest()
      {
           $this->homeContoller->index();
-          $this->expectOutputRegex("[Login Admin]");
-          $this->expectOutputRegex("[Login]");
+          $this->expectOutputRegex("[]");
      }
 
      public function testUserLogin()
