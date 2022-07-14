@@ -1,5 +1,11 @@
 # Aplikasi Sistem Informasi Mahasiswa
 ## Aplikasi CRUD Sistem Informasi Mahasiswa sederhana menggunakan PHP Native
+## Spesifikasi Aplikasi :
+- Menggunakan konsep MVC
+- Menggunakan Repository Pattern
+- PHP Native
+- Database MySQL
+- Server : PHP Development Server
 ## Cara menggunakan aplikasi :
 - Clone repository ini atau download file zip.
 - Buat dua database, database "db_student" dan "db_student_test" (unit test).
