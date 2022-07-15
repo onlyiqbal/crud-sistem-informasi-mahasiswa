@@ -6,7 +6,7 @@
 - PHP Native
 - Database MySQL
 - Server : PHP Development Server
-## Cara menggunakan aplikasi :
+## Panduan Instalasi :
 - Clone repository ini atau download file zip.
 - Buat dua database, database "db_student" dan "db_student_test" (unit test).
 - Import file sql script yang terdapat didalam projectnaya sesuai dengan nama databasenya.
