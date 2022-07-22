@@ -1,0 +1,33 @@
+@startuml "Entity Diagrma Informasi Mahasiswa"
+     entity "Users" as users {
+          * **id : varchar**
+          --
+          username : varchar
+          --
+          password : varchar
+     }
+
+     entity "Sessions" as sessions {
+          * **id : varchar**
+          --
+          user_id : varchar
+     }
+
+     entity "Students" as students {
+          * **nim : char**
+          --
+          nama : varchar
+          --
+          tempat_lahir : varchar
+          --
+          tanggal_lahir : date
+          --
+          fakultas : varchar
+          --
+          jurusan : varchar
+          --
+          ipk : decimal
+     }
+
+     users |o--|| sessions
+@enduml
