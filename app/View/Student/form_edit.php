@@ -76,27 +76,38 @@
                <select name="fakultas" id="fakultas">
                     <?php
                     $fakultas = $model['student']['fakultas'] ?? $_POST['fakultas'];
+
+                    $selected_kedokteran = "";
+                    $selected_fmipa = "";
+                    $selected_teknik = "";
+                    $selected_ekonomi = "";
+                    $selected_sastra = "";
+                    $selected_fasilkom = "";
+
                     switch ($fakultas) {
                          case 'Kedokteran':
-                              echo "<option value=\"Kedokteran\" selected>Kedokteran</option>";
+                              $selected_kedokteran = "selected";
                               break;
                          case 'FMIPA':
-                              echo "<option value=\"FMIPA\" selected>FMIPA</option>";
-                              break;
-                         case 'Ekonomi':
-                              echo "<option value=\"Ekonomi\" selected>Ekonomi</option>";
+                              $selected_fmipa = "selected";
                               break;
                          case 'Teknik':
-                              echo "<option value=\"Teknik\" selected>Teknik</option>";
+                              $selected_teknik = "selected";
                               break;
                          case 'Sastra':
-                              echo "<option value=\"Sastra\" selected>Sastra</option>";
+                              $selected_sastra = "selected";
                               break;
-                         case 'FASILKOM':
-                              echo "<option value=\"FASILKOM\" selected>FASILKOM</option>";
+                         case 'FMIPA':
+                              $selected_fasilkom = "selected";
                               break;
                     }
                     ?>
+                    <option value="Kedokteran" <?php echo $selected_kedokteran ?>>Kedokteran</option>
+                    <option value="FMIPA" <?php echo $selected_fmipa ?>>FMIPA</option>
+                    <option value="Ekonomi" <?php echo $selected_ekonomi ?>>Ekonomi</option>
+                    <option value="Teknik" <?php echo $selected_teknik ?>>Teknik</option>
+                    <option value="Sastra" <?php echo $selected_sastra ?>>Sastra</option>
+                    <option value="FASILKOM" <?php echo $selected_fasilkom ?>>FASILKOM</option>
                </select>
           </p>
           <p>
