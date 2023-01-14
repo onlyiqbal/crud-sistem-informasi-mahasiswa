@@ -41,7 +41,7 @@ class SessionRepository
           }
      }
 
-     public function delteById(string $id): void
+     public function deleteById(string $id): void
      {
           $statement = $this->connection->prepare("DELETE FROM sessions WHERE id = ?");
           $statement->execute([$id]);

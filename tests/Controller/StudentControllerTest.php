@@ -125,7 +125,7 @@ namespace Iqbal\Sistem\Informasi\Mahasiswa\Controller {
                $this->assertEquals($result->nama, "Bambang");
           }
 
-          public function testUpdateFaild()
+          public function testUpdateFailed()
           {
                $_POST['nim'] = "12345678";
                $_POST['nama'] = null;

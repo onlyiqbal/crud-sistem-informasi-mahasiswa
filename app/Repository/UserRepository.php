@@ -16,8 +16,8 @@ class UserRepository
 
      public function save(User $user): User
      {
-          $satatement = $this->connection->prepare("INSERT INTO users(id, username, password) VALUES (?, ?, ?)");
-          $satatement->execute([
+          $statement = $this->connection->prepare("INSERT INTO users(id, username, password) VALUES (?, ?, ?)");
+          $statement->execute([
                $user->id, $user->username, $user->password
           ]);
           return $user;

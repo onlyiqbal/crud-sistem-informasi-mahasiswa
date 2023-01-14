@@ -9,15 +9,15 @@ use PHPUnit\Framework\TestCase;
 
 class SessionRepositoryTest extends TestCase
 {
-     private SessionRepository $sessionRespository;
+     private SessionRepository $sessionRepository;
      private UserRepository $userRepository;
 
      protected function setUp(): void
      {
           $this->userRepository = new UserRepository(Database::getConnection());
-          $this->sessionRespository = new SessionRepository(Database::getConnection());
+          $this->sessionRepository = new SessionRepository(Database::getConnection());
 
-          $this->sessionRespository->deleteAll();
+          $this->sessionRepository->deleteAll();
           $this->userRepository->deleteAll();
 
           $user = new User();
@@ -33,9 +33,9 @@ class SessionRepositoryTest extends TestCase
           $session->id = uniqid();
           $session->user_id = "budi";
 
-          $this->sessionRespository->save($session);
+          $this->sessionRepository->save($session);
 
-          $result = $this->sessionRespository->findById($session->id);
+          $result = $this->sessionRepository->findById($session->id);
 
           $this->assertEquals($session->id, $result->id);
           $this->assertEquals($session->user_id, $result->user_id);
@@ -47,16 +47,16 @@ class SessionRepositoryTest extends TestCase
           $session->id = uniqid();
           $session->user_id = "budi";
 
-          $this->sessionRespository->save($session);
+          $this->sessionRepository->save($session);
 
-          $result = $this->sessionRespository->delteById($session->id);
+          $result = $this->sessionRepository->deleteById($session->id);
 
           $this->assertNull($result);
      }
 
      public function testDeleteByIdNotFound()
      {
-          $result = $this->sessionRespository->delteById("tidak ada");
+          $result = $this->sessionRepository->deleteById("tidak ada");
 
           $this->assertNull($result);
      }

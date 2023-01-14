@@ -12,7 +12,7 @@ use Iqbal\Sistem\Informasi\Mahasiswa\Middleware\MustNotLoginMiddleware;
 
 Database::getConnection('prod');
 
-//Home Cotroller
+//Home Controller
 Router::add("GET", "/", HomeController::class, 'index', []);
 
 //User Controller

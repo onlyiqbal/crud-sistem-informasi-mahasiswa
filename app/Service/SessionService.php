@@ -10,12 +10,12 @@ use Iqbal\Sistem\Informasi\Mahasiswa\Repository\UserRepository;
 class SessionService
 {
      public static string $COOKIE_NAME = "X-IQBAL-SESSION";
-     private SessionRepository $sessionRespository;
+     private SessionRepository $sessionRepository;
      private UserRepository $userRepository;
 
      public function __construct(SessionRepository $sessionRepository, UserRepository $userRepository)
      {
-          $this->sessionRespository = $sessionRepository;
+          $this->sessionRepository = $sessionRepository;
           $this->userRepository = $userRepository;
      }
 
@@ -25,7 +25,7 @@ class SessionService
           $session->id = uniqid();
           $session->user_id = $user_id;
 
-          $this->sessionRespository->save($session);
+          $this->sessionRepository->save($session);
 
           setcookie(self::$COOKIE_NAME, $session->id, time() + (60 * 60 * 24 * 30), "/");
 
@@ -35,7 +35,7 @@ class SessionService
      public function destroy(): void
      {
           $sessionId = $_COOKIE[self::$COOKIE_NAME] ?? "";
-          $this->sessionRespository->delteById($sessionId);
+          $this->sessionRepository->deleteById($sessionId);
 
           setcookie(self::$COOKIE_NAME, "", 1, "/");
      }
@@ -44,7 +44,7 @@ class SessionService
      {
           $sessionId = $_COOKIE[self::$COOKIE_NAME] ?? "";
 
-          $session = $this->sessionRespository->findById($sessionId);
+          $session = $this->sessionRepository->findById($sessionId);
           if ($session == null) {
                return null;
           } else {

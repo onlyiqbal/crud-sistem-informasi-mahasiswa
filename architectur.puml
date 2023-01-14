@@ -4,7 +4,7 @@
      node "Sistem Informasi Mahasiswa" {
           node "Model" as model
           node "Domain" as domain
-          node "Contorller" as controller
+          node "Controller" as controller
           node "View" as view
           node "Service" as service
           node "Repository" as repository

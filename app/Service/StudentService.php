@@ -139,7 +139,7 @@ class StudentService
           $student = $this->studentRepository->findByNim($nim);
 
           if ($student == null) {
-               throw new ValidationException("Gagal Mengapus Data");
+               throw new ValidationException("Gagal Menghapus Data");
           }
 
           $this->studentRepository->deleteByNim($nim);

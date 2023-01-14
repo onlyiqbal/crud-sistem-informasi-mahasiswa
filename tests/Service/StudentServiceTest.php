@@ -45,7 +45,7 @@ class StudentServiceTest extends TestCase
           $this->assertEquals($response->student->ipk, $request->ipk);
      }
 
-     public function testAddFaild()
+     public function testAddFailed()
      {
           $this->expectException(ValidationException::class);
           $request = new StudentAddRequest();
@@ -117,7 +117,7 @@ class StudentServiceTest extends TestCase
           $this->assertEquals($result->jurusan, $request->jurusan);
      }
 
-     public function testUpdateStudentFaild()
+     public function testUpdateStudentFailed()
      {
           $this->expectException(ValidationException::class);
 

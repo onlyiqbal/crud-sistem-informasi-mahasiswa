@@ -61,7 +61,7 @@ class SessionServiceTest extends TestCase
           $this->assertNull($result);
      }
 
-     public function testCurent()
+     public function testCurrent()
      {
           $session = new Session();
           $session->id = uniqid();

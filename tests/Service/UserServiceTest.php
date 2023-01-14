@@ -44,7 +44,7 @@ class UserServiceTest extends TestCase
           $this->assertTrue(password_verify($request->password, $response->user->password));
      }
 
-     public function testRegistrationFaild()
+     public function testRegistrationFailed()
      {
           $this->expectException(ValidationException::class);
           $request = new UserRegistrationRequest();

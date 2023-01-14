@@ -12,13 +12,13 @@ use PHPUnit\Framework\TestCase;
 
 class HomeControllerTest extends TestCase
 {
-     private HomeController $homeContoller;
+     private HomeController $homeController;
      private UserRepository $userRepository;
      private SessionRepository $sessionRepository;
 
      protected function setUp(): void
      {
-          $this->homeContoller = new HomeController();
+          $this->homeController = new HomeController();
           $this->sessionRepository = new SessionRepository(Database::getConnection());
           $this->userRepository = new UserRepository(Database::getConnection());
 
@@ -28,7 +28,7 @@ class HomeControllerTest extends TestCase
 
      public function testGuest()
      {
-          $this->homeContoller->index();
+          $this->homeController->index();
           $this->expectOutputRegex("[]");
      }
 
@@ -47,7 +47,7 @@ class HomeControllerTest extends TestCase
 
           $_COOKIE[SessionService::$COOKIE_NAME] = $session->id;
 
-          $this->homeContoller->index();
+          $this->homeController->index();
 
           $this->expectOutputRegex("[Dashboard Sistem Informasi Mahasiswa]");
      }
