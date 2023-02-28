@@ -61,7 +61,7 @@
                <select name="thn">
                     <?php
                     for ($i = 1990; $i <= 2022; $i++) {
-                         if ($i == ($model['student']['bln'] ?? $_POST['thn'])) {
+                         if ($i == ($model['student']['thn'] ?? $_POST['thn'])) {
                               echo "<option value = $i selected>";
                          } else {
                               echo "<option value = $i >";

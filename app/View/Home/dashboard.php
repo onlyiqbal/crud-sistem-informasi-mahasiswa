@@ -171,7 +171,7 @@
           <hr>
           <nav>
                <ul>
-                    <li><a href="/students/show">Tampil</a></li>
+                    <li><a href="/students/show">Lihat</a></li>
                     <li><a href="/students/add">Tambah</a>
                     <li><a href="/students/edit">Edit</a>
                     <li><a href="/students/delete">Hapus</a></li>
